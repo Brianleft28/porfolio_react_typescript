@@ -49,12 +49,17 @@ const Navbar = () => {
   };
 
   return (
-    <NextUINavbar disableAnimation isBordered>
+    <NextUINavbar
+      className="dark"
+      disableAnimation={false}
+      isBlurred={true}
+      isBordered
+    >
       <NavbarContent className="sm:hidden" justify="start">
         <NavbarMenuToggle />
       </NavbarContent>
 
-      <NavbarContent className="sm:hidden pr-3" justify="center">
+      <NavbarContent className="sm:hidden pr-3 dark" justify="center">
         <NavbarBrand>
           <RouterLink
             to="/"
@@ -65,7 +70,7 @@ const Navbar = () => {
         </NavbarBrand>
       </NavbarContent>
 
-      <NavbarContent className="hidden sm:flex gap-4" justify="start">
+      <NavbarContent className="hidden sm:flex gap-4 " justify="start">
         <NavbarBrand>
           <RouterLink
             to="/"
@@ -90,23 +95,22 @@ const Navbar = () => {
             </Link>
           </NavbarItem>
         ))}
+        <NavbarMenu className="dark bg-opacity-5 bg-blend-luminosity">
+          {menuItems.map((item: MenuItem, index: number) => (
+            <NavbarMenuItem key={`${item}-${index}`}>
+              <Link
+                as={RouterLink}
+                to={item.href}
+                color={item.isActive ? "primary" : "foreground"}
+                size="md"
+                onPress={() => handleMenuItemClick(index)}
+              >
+                {item.name}
+              </Link>
+            </NavbarMenuItem>
+          ))}
+        </NavbarMenu>
       </NavbarContent>
-
-      <NavbarMenu>
-        {menuItems.map((item: MenuItem, index: number) => (
-          <NavbarMenuItem key={`${item}-${index}`}>
-            <Link
-              as={RouterLink}
-              to={item.href}
-              color={item.isActive ? "primary" : "foreground"}
-              size="md"
-              onPress={() => handleMenuItemClick(index)}
-            >
-              {item.name}
-            </Link>
-          </NavbarMenuItem>
-        ))}
-      </NavbarMenu>
     </NextUINavbar>
   );
 };
