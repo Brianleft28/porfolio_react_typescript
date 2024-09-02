@@ -13,6 +13,12 @@ import { Link as RouterLink } from "react-router-dom";
 
 import { useEffect, useState } from "react";
 
+interface MenuItem {
+  href: string;
+  name: string;
+  isActive: boolean;
+}
+
 const Navbar = () => {
   const initialMenuItems = [
     { name: "About", href: "/about", isActive: false },
@@ -31,10 +37,10 @@ const Navbar = () => {
   }, [menuItems]);
 
   const handleMenuItemClick = (index: number) => {
-    const newMenuItems = menuItems.map((item, i) => {
-      console.log(`Menu item ${index} clicked`);
-      console.log("Menu item", item.href);
+    const newMenuItems = menuItems.map((item: MenuItem, i: number) => {
       if (i === index) {
+        console.log("Menu item", item.href, "href");
+        console.log(`Menu item ${index}, ${item.name} clicked`);
         return { ...item, isActive: true };
       }
       return { ...item, isActive: false };
@@ -50,42 +56,54 @@ const Navbar = () => {
 
       <NavbarContent className="sm:hidden pr-3" justify="center">
         <NavbarBrand>
-          <p className="font-bold text-inherit">&lt;Brian /&gt;</p>
+          <RouterLink
+            to="/"
+            className="font-bold text-inherit bg-foreground-50 p-2 rounded-e-md "
+          >
+            &lt;Brian /&gt;
+          </RouterLink>
         </NavbarBrand>
       </NavbarContent>
 
       <NavbarContent className="hidden sm:flex gap-4" justify="start">
-        <p className="font-bold text-inherit">&lt;Brian /&gt;</p>
+        <NavbarBrand>
+          <RouterLink
+            to="/"
+            className="font-bold text-inherit bg-foreground-50 p-2 rounded-e-md "
+          >
+            &lt;Brian /&gt;
+          </RouterLink>
+        </NavbarBrand>
       </NavbarContent>
 
       <NavbarContent className="hidden sm:flex gap-4" justify="end">
-        {menuItems.map((item, index) => (
+        {menuItems.map((item: MenuItem, index: number) => (
           <NavbarItem key={`${item}-${index}`}>
-            <RouterLink to={item.href} as={"div6"}>
-              <Link
-                color={item.isActive ? "primary" : "foreground"}
-                size="md"
-                onPress={() => handleMenuItemClick(index)}
-              >
-                {item.name}
-              </Link>
-            </RouterLink>
+            <Link
+              as={RouterLink}
+              to={item.href}
+              color={item.isActive ? "primary" : "foreground"}
+              size="md"
+              onPress={() => handleMenuItemClick(index)}
+            >
+              {item.name}
+            </Link>
           </NavbarItem>
         ))}
       </NavbarContent>
 
       <NavbarMenu>
-        {menuItems.map((item, index) => (
+        {menuItems.map((item: MenuItem, index: number) => (
           <NavbarMenuItem key={`${item}-${index}`}>
-            <RouterLink to={item.href}>
-              <Link
-                color={item.isActive ? "primary" : "foreground"}
-                size="md"
-                onPress={() => handleMenuItemClick(index)}
-              >
-                {item.name}
-              </Link>
-            </RouterLink>
+            <Link
+              as={RouterLink}
+              to={item.href}
+              color={item.isActive ? "primary" : "foreground"}
+              size="md"
+              onPress={() => handleMenuItemClick(index)}
+            >
+              {item.name}
+            </Link>
           </NavbarMenuItem>
         ))}
       </NavbarMenu>
