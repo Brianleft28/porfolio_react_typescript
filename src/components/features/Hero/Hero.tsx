@@ -28,11 +28,11 @@ const Hero = () => {
             <span className="text-secondary-400">
               TypeScript, SQL, Svelte, React, and Node.js{" "}
             </span>
-            , striving to master the frameworks and UI libraries I work with. My
+            ,striving to master the frameworks and UI libraries I work with. My
             approach to development is driven by a relentless pursuit of
             perfection—every line of code and architectural decision is an
             opportunity to refine my craft. With a strong appreciation for
-            structure and code architecture, I focus on building scalable,
+            structure and code architecture. I focus on building scalable,
             <span className="text-secondary-400">high-performance </span>{" "}
             applications that deliver exceptional user experiences. Every day is
             a chance to explore new technologies and push the boundaries of
