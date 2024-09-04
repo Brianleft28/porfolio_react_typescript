@@ -8,6 +8,7 @@ import {
   NavbarContent,
   NavbarItem,
   Link,
+  Divider,
 } from "@nextui-org/react";
 
 import { Link as RouterLink } from "react-router-dom";
@@ -15,6 +16,7 @@ import { Link as RouterLink } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Logo from "./logo/Logo";
 import RedesSociales from "./redes/RedesSociales";
+import ThemeController from "./thtmeController/ThemeController";
 
 interface MenuItem {
   href: string;
@@ -95,8 +97,13 @@ const Navbar = () => {
           </NavbarItem>
         ))}
         {/* Redes sociales */}
-        <NavbarItem className="flex gap-2 hover:-translate-y-0.5 transition-all dutaion-300 hover:scale-100">
+        <NavbarItem className="flex gap-2">
           <RedesSociales style="redes" />
+        </NavbarItem>
+        {/* DIVIDER Y THEME CONTROLLER */}
+        <Divider className="w-0.5 h-7 bg-content3" orientation="vertical" />
+        <NavbarItem className="flex gap-2 hover:-translate-y-0.5 transition-all dutaion-300 hover:scale-100">
+          <ThemeController />
         </NavbarItem>
       </NavbarContent>
       <NavbarMenu className="futuristic-minimalist sm:hidden flex">
@@ -113,6 +120,12 @@ const Navbar = () => {
             </Link>
           </NavbarMenuItem>
         ))}
+        <NavbarItem className="flex gap-2 hover:-translate-y-0.5 transition-all dutaion-300 hover:scale-100">
+          <RedesSociales style="redes" />
+        </NavbarItem>
+        <NavbarItem className="flex gap-2 hover:-translate-y-0.5 transition-all dutaion-300 hover:scale-100">
+          <ThemeController />
+        </NavbarItem>
       </NavbarMenu>
     </NextUINavbar>
   );

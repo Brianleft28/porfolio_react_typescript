@@ -8,26 +8,28 @@ interface RedesSocialesProps {
 const RedesSociales: React.FC<RedesSocialesProps> = ({ style }) => {
   return (
     <>
-      <div className="flex gap-2">
+      <div className="flex gap-0.5 text-foreground">
         <a
           href="https://www.linkedin.com/in/brian-benegas-44770729b/"
           target="_blank"
           rel="noreferrer"
           /* Estilo que viene del parametro */
-          className={`${style}`}
+          className={`${style} hover:-translate-y-0.5 transition-all dutaion-300`}
         >
           <FaLinkedin size={24} />
         </a>
       </div>
-      <a
-        href="https://github.com/Brianleft28"
-        target="_blank"
-        rel="noreferrer"
-        /* Estilo que viene del parametro */
-        className={`${style}`}
-      >
-        <FaGithubSquare size={24} />
-      </a>
+      <div className="flex gap-0.5 text-foreground">
+        <a
+          href="https://github.com/Brianleft28"
+          target="_blank"
+          rel="noreferrer"
+          /* Estilo que viene del parametro */
+          className={`${style} hover:-translate-y-0.5 transition-all dutaion-300`}
+        >
+          <FaGithubSquare size={24} />
+        </a>
+      </div>
     </>
   );
 };
