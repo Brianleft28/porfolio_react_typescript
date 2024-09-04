@@ -63,7 +63,7 @@ const Navbar = () => {
         justify="center"
       >
         <NavbarBrand>
-          <RouterLink to="/" className="font-bold  p-2 rounded-e-md ">
+          <RouterLink to="/" className="font-bold  p-2 rounded-e-md">
             &lt;Brian /&gt;
           </RouterLink>
         </NavbarBrand>
@@ -77,27 +77,27 @@ const Navbar = () => {
         </NavbarBrand>
       </NavbarContent>
 
-      <NavbarContent className="hidden sm:flex gap-4" justify="end">
+      <NavbarContent className="hidden sm:flex gap-4 gap-x-8 " justify="end">
         {menuItems.map((item: MenuItem, index: number) => (
           <NavbarItem key={`${item}-${index}`}>
             <Link
               as={RouterLink}
               to={item.href}
-              color={item.isActive ? "primary" : "foreground"}
-              size="md"
+              color={item.isActive ? "secondary" : "foreground"}
+              size="sm"
               onPress={() => handleMenuItemClick(index)}
             >
               {item.name}
             </Link>
           </NavbarItem>
         ))}
-        <NavbarMenu className="futuristic-minimalist">
+        <NavbarMenu className="futuristic-minimalist sm:hidden flex">
           {menuItems.map((item: MenuItem, index: number) => (
             <NavbarMenuItem key={`${item}-${index}`}>
               <Link
                 as={RouterLink}
                 to={item.href}
-                color={item.isActive ? "primary" : "foreground"}
+                color={item.isActive ? "secondary" : "foreground"}
                 size="md"
                 onPress={() => handleMenuItemClick(index)}
               >
