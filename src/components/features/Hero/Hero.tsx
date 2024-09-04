@@ -11,7 +11,7 @@ const Hero = () => {
         >
           <CardHeader>
             <h1 className="text-5xl font-bold tracking-wide leading-tight">
-              Hello, I'm <span className="text-primary">Brian Benegas</span>
+              Hello, I'm <span className="text-secondary">Brian Benegas</span>
             </h1>
           </CardHeader>
           <CardBody>
