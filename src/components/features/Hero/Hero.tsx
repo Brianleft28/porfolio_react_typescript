@@ -1,4 +1,6 @@
 import { Card, CardHeader, CardBody, CardFooter } from "@nextui-org/card";
+import { Button } from "@nextui-org/react";
+
 const Hero = () => {
   return (
     <div className="font-primary">
@@ -11,7 +13,7 @@ const Hero = () => {
         >
           <CardHeader>
             <h1 className="text-5xl font-bold tracking-wide leading-tight">
-              Hello, I'm <span className="text-primary">Brian Benegas</span>
+              Hello, I'm <span className="text-secondary">Brian Benegas</span>
             </h1>
           </CardHeader>
           <CardBody>
@@ -21,7 +23,9 @@ const Hero = () => {
             </p>
           </CardBody>
           <CardFooter>
-            <button className="btn btn-primary">Get in touch</button>
+            <Button radius="none" color="primary" variant="ghost" size="lg">
+              Contact Me
+            </Button>
           </CardFooter>
         </Card>
       </div>
