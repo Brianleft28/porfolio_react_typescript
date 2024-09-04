@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import Navbar from "./Navbar/Navbar";
+import CommonLayout from "./CommonLayout";
 interface LayoutProps {
   children: ReactNode;
 }
@@ -9,7 +10,9 @@ const Layout = ({ children }: LayoutProps) => {
     <div className="font-primary">
       <Navbar />
       <div className="min-h-[calc(100vh-65px)]  bg-gradient-to-br from-background via-content1-foreground to-background p-3">
+       <CommonLayout>
         {children}
+       </CommonLayout>
       </div>
     </div>
   );

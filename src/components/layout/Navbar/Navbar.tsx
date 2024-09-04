@@ -24,6 +24,7 @@ interface MenuItem {
 
 const Navbar = () => {
   const initialMenuItems = [
+    { name: "Home", href: "/", isActive: true },
     { name: "Projects", href: "/projects", isActive: false },
     { name: "Skills", href: "/skills", isActive: false },
     { name: "Experience", href: "/experience", isActive: false },
