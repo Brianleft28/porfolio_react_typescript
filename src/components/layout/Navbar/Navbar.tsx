@@ -50,21 +50,20 @@ const Navbar = () => {
 
   return (
     <NextUINavbar
-      className="dark"
+      className="futuristic-minimalist bg-background"
       disableAnimation={false}
-      isBlurred={true}
-      isBordered
+      isBordered={true}
     >
       <NavbarContent className="sm:hidden" justify="start">
         <NavbarMenuToggle />
       </NavbarContent>
 
-      <NavbarContent className="sm:hidden pr-3 dark" justify="center">
+      <NavbarContent
+        className="sm:hidden pr-3 futuristic-minimalist"
+        justify="center"
+      >
         <NavbarBrand>
-          <RouterLink
-            to="/"
-            className="font-bold text-inherit bg-foreground-50 p-2 rounded-e-md "
-          >
+          <RouterLink to="/" className="font-bold  p-2 rounded-e-md ">
             &lt;Brian /&gt;
           </RouterLink>
         </NavbarBrand>
@@ -72,10 +71,7 @@ const Navbar = () => {
 
       <NavbarContent className="hidden sm:flex gap-4 " justify="start">
         <NavbarBrand>
-          <RouterLink
-            to="/"
-            className="font-bold text-inherit bg-foreground-50 p-2 rounded-e-md "
-          >
+          <RouterLink to="/" className="font-bold  p-2 rounded-e-md ">
             &lt;Brian /&gt;
           </RouterLink>
         </NavbarBrand>
@@ -95,7 +91,7 @@ const Navbar = () => {
             </Link>
           </NavbarItem>
         ))}
-        <NavbarMenu className="dark bg-opacity-5 bg-blend-luminosity">
+        <NavbarMenu className="futuristic-minimalist">
           {menuItems.map((item: MenuItem, index: number) => (
             <NavbarMenuItem key={`${item}-${index}`}>
               <Link
