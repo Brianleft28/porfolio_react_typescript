@@ -1,3 +1,4 @@
+import "./Navbar.css";
 import {
   Navbar as NextUINavbar,
   NavbarBrand,
@@ -12,6 +13,8 @@ import {
 import { Link as RouterLink } from "react-router-dom";
 
 import { useEffect, useState } from "react";
+import Logo from "./logo/Logo";
+import RedesSociales from "./redes/RedesSociales";
 
 interface MenuItem {
   href: string;
@@ -21,9 +24,9 @@ interface MenuItem {
 
 const Navbar = () => {
   const initialMenuItems = [
-    { name: "About", href: "/about", isActive: false },
     { name: "Projects", href: "/projects", isActive: false },
     { name: "Skills", href: "/skills", isActive: false },
+    { name: "Experience", href: "/experience", isActive: false },
     { name: "Contact", href: "/contact", isActive: false },
   ];
 
@@ -63,23 +66,22 @@ const Navbar = () => {
         justify="center"
       >
         <NavbarBrand>
-          <RouterLink to="/" className="font-bold  p-2 rounded-e-md">
-            &lt;Brian /&gt;
-          </RouterLink>
+          <Logo />
         </NavbarBrand>
       </NavbarContent>
 
       <NavbarContent className="hidden sm:flex gap-4 " justify="start">
         <NavbarBrand>
-          <RouterLink to="/" className="font-bold  p-2 rounded-e-md ">
-            &lt;Brian /&gt;
-          </RouterLink>
+          <Logo />
         </NavbarBrand>
       </NavbarContent>
 
       <NavbarContent className="hidden sm:flex gap-4 gap-x-8 " justify="end">
         {menuItems.map((item: MenuItem, index: number) => (
-          <NavbarItem key={`${item}-${index}`}>
+          <NavbarItem
+            key={`${item}-${index}`}
+            className="link hover:-translate-y-0.5 transition-all dutaion-300 hover:scale-105"
+          >
             <Link
               as={RouterLink}
               to={item.href}
@@ -91,22 +93,26 @@ const Navbar = () => {
             </Link>
           </NavbarItem>
         ))}
-        <NavbarMenu className="futuristic-minimalist sm:hidden flex">
-          {menuItems.map((item: MenuItem, index: number) => (
-            <NavbarMenuItem key={`${item}-${index}`}>
-              <Link
-                as={RouterLink}
-                to={item.href}
-                color={item.isActive ? "secondary" : "foreground"}
-                size="md"
-                onPress={() => handleMenuItemClick(index)}
-              >
-                {item.name}
-              </Link>
-            </NavbarMenuItem>
-          ))}
-        </NavbarMenu>
+        {/* Redes sociales */}
+        <NavbarItem className="flex gap-2 hover:-translate-y-0.5 transition-all dutaion-300 hover:scale-100">
+          <RedesSociales style="redes" />
+        </NavbarItem>
       </NavbarContent>
+      <NavbarMenu className="futuristic-minimalist sm:hidden flex">
+        {menuItems.map((item: MenuItem, index: number) => (
+          <NavbarMenuItem key={`${item}-${index}`}>
+            <Link
+              as={RouterLink}
+              to={item.href}
+              color={item.isActive ? "secondary" : "foreground"}
+              size="md"
+              onPress={() => handleMenuItemClick(index)}
+            >
+              {item.name}
+            </Link>
+          </NavbarMenuItem>
+        ))}
+      </NavbarMenu>
     </NextUINavbar>
   );
 };

@@ -1,0 +1,26 @@
+.logo {
+  position: relative;
+  z-index: 2;
+}
+
+.logo::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    hsl(var(--nextui-secondary)),
+    hsl(var(--nextui-secondary-500))
+  );
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  transition: width 0.3s ease-in-out;
+  z-index: -1;
+}
+
+.logo:hover::after {
+  width: 65%;
+}
