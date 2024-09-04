@@ -96,6 +96,8 @@ const Navbar = () => {
             </Link>
           </NavbarItem>
         ))}
+        {/* DIVIDER */}
+        <Divider className="w-0.5 h-7 bg-content3" orientation="vertical" />
         {/* Redes sociales */}
         <NavbarItem className="flex gap-2">
           <RedesSociales style="redes" />
