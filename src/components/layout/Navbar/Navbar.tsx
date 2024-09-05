@@ -13,10 +13,12 @@ import {
 
 import { Link as RouterLink } from "react-router-dom";
 
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Logo from "./logo/Logo";
 import RedesSociales from "./redes/RedesSociales";
 import ThemeController from "./thtmeController/ThemeController";
+import { ThemeContext } from "../../../context/Theme";
+
 
 interface MenuItem {
   href: string;
@@ -25,8 +27,9 @@ interface MenuItem {
 }
 
 const Navbar = () => {
+  const { theme } = useContext(ThemeContext);
+  
   const initialMenuItems = [
-    { name: "Home", href: "/", isActive: true },
     { name: "Projects", href: "/projects", isActive: false },
     { name: "Skills", href: "/skills", isActive: false },
     { name: "Experience", href: "/experience", isActive: false },
@@ -64,8 +67,9 @@ const Navbar = () => {
 
   return (
     <NextUINavbar
-      className="futuristic-minimalist bg-background"
+      className={`${theme} `}
       disableAnimation={false}
+      isBlurred={true}
       isBordered={true}
     >
       <NavbarContent className="sm:hidden" justify="start">
@@ -73,7 +77,7 @@ const Navbar = () => {
       </NavbarContent>
 
       <NavbarContent
-        className="sm:hidden pr-3 futuristic-minimalist"
+        className="sm:hidden pr-3"
         justify="center"
       >
         <NavbarBrand onClick={desactiveMenuItems}>
@@ -105,14 +109,14 @@ const Navbar = () => {
           </NavbarItem>
         ))}
         {/* DIVIDER */}
-        <Divider className="w-0.5 h-7 bg-content3" orientation="vertical" />
+        <Divider className="w-0.5 h-7 bg-divider" orientation="vertical" />
         {/* Redes sociales */}
         <NavbarItem className="flex gap-2">
           <RedesSociales style="redes" />
         </NavbarItem>
         {/* DIVIDER Y THEME CONTROLLER */}
-        <Divider className="w-0.5 h-7 bg-content3" orientation="vertical" />
-        <NavbarItem className="flex gap-2 hover:-translate-y-0.5 transition-all dutaion-300 hover:scale-100">
+        <Divider className="w-0.5 h-7 bg-divider" orientation="vertical" />
+        <NavbarItem className="flex gap-2">
           <ThemeController />
         </NavbarItem>
       </NavbarContent>

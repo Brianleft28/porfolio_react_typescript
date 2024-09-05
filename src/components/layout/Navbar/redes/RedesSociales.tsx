@@ -14,7 +14,7 @@ const RedesSociales: React.FC<RedesSocialesProps> = ({ style }) => {
           target="_blank"
           rel="noreferrer"
           /* Estilo que viene del parametro */
-          className={`${style} hover:-translate-y-0.5 transition-all dutaion-300`}
+          className={`${style} hover:text-background hover:-translate-y-0.5 transition-all dutaion-300`}
         >
           <FaLinkedin size={24} />
         </a>
@@ -25,7 +25,7 @@ const RedesSociales: React.FC<RedesSocialesProps> = ({ style }) => {
           target="_blank"
           rel="noreferrer"
           /* Estilo que viene del parametro */
-          className={`${style} hover:-translate-y-0.5 transition-all dutaion-300`}
+          className={`${style} hover:text-background hover:-translate-y-0.5 transition-all dutaion-300`}
         >
           <FaGithubSquare size={24} />
         </a>
