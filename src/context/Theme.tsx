@@ -1,4 +1,4 @@
-import { createContext, useState, ReactNode } from "react";
+import { createContext, useState, ReactNode, useEffect } from "react";
 
 /* Definir el tipo para el contexto */
 type ThemeContextType = {
@@ -15,7 +15,15 @@ const ThemeContext = createContext<ThemeContextType>(defaultThemeContext);
 /* Crear el contexto */
 
 const ThemeProvider = ({ children }: { children: ReactNode }) => {
-  const [theme, setTheme] = useState("futuristic-minimalist");
+  const [theme, setTheme] = useState(() => {
+    const savedTheme = localStorage.getItem("theme");
+    return savedTheme || "futuristic-minimalist";
+  });
+  useEffect(() => {
+    // Guardar el valor del tema en el localStorage cada vez que cambie
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
       {children}
