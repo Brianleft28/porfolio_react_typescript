@@ -10,7 +10,7 @@ const Hero = () => {
         shadow="lg"
         radius="none"
         isBlurred={true}
-        className="mb-4 bg-gradient-to-bl from-transparent/0 via-background to-foreground-50/5 p-3"
+        className="mb-4 bg-transparent p-3"
       >
         <CardHeader>
           <div className="flex flex-col">
