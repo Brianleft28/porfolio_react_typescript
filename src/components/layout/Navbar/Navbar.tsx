@@ -53,6 +53,14 @@ const Navbar = () => {
     });
     setMenuItems(newMenuItems);
   };
+ 
+  const desactiveMenuItems = () => {
+    const newMenuItems = menuItems.map((item: MenuItem) => { 
+      return { ...item, isActive: false };
+    });
+    setMenuItems(newMenuItems);
+  }
+
 
   return (
     <NextUINavbar
@@ -68,12 +76,12 @@ const Navbar = () => {
         className="sm:hidden pr-3 futuristic-minimalist"
         justify="center"
       >
-        <NavbarBrand>
+        <NavbarBrand onClick={desactiveMenuItems}>
           <Logo />
         </NavbarBrand>
       </NavbarContent>
 
-      <NavbarContent className="hidden sm:flex gap-4 " justify="start">
+      <NavbarContent onClick={desactiveMenuItems} className="hidden sm:flex gap-4 " justify="start">
         <NavbarBrand>
           <Logo />
         </NavbarBrand>

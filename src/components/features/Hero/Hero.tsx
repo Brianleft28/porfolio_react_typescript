@@ -26,9 +26,8 @@ const Hero = () => {
             Obsessive about clean, efficient code and passionate about constant
             learning. I dive deep into{" "}
             <span className="text-secondary-400">
-              TypeScript, SQL, Svelte, React, and Node.js{" "}
-            </span>
-            ,striving to master the frameworks and UI libraries I work with. My
+              TypeScript, SQL, Svelte, React, and Node.{" "}
+            </span>My
             approach to development is driven by a relentless pursuit of
             perfection—every line of code and architectural decision is an
             opportunity to refine my craft. With a strong appreciation for
