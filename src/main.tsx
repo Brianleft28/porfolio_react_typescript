@@ -4,6 +4,7 @@ import "./index.css";
 import { NextUIProvider } from "@nextui-org/react";
 import { ThemeProvider } from "./context/Theme.tsx";
 import MainComponent from "./MainComponent.tsx";
+import { LangProvider } from "./context/Lang.tsx";
 
 
 
@@ -11,7 +12,9 @@ createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <NextUIProvider>
       <ThemeProvider>
+        <LangProvider>
         <MainComponent />
+        </LangProvider>
       </ThemeProvider>
     </NextUIProvider>
   </StrictMode>

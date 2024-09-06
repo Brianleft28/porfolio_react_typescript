@@ -2,7 +2,14 @@ import { Button } from "@nextui-org/react";
 import { GrContact } from "react-icons/gr";
 import { RiBriefcase4Line } from "react-icons/ri";
 import { TbFileCv } from "react-icons/tb";
-const Buttons = () => {
+import { Lang } from "../../../context/Lang";
+import texts from "./Text";
+
+interface ButtonsProps {
+  lang: Lang;
+}
+
+const Buttons: React.FC<ButtonsProps> = ({ lang }) => {
   return (
     <>
       <Button
@@ -13,7 +20,7 @@ const Buttons = () => {
         variant="ghost"
         size="lg"
       >
-        Contact Me <GrContact />
+        {texts[lang].buttons.contact} <GrContact />
       </Button>
       <Button
         className="hover:-translate-y-2 duration-250"
@@ -23,7 +30,7 @@ const Buttons = () => {
         variant="ghost"
         size="lg"
       >
-        View My Work
+        {texts[lang].buttons.work}
         <RiBriefcase4Line />
       </Button>
       <Button
@@ -34,7 +41,7 @@ const Buttons = () => {
         variant="ghost"
         size="lg"
       >
-        Dowlnoad CV
+        {texts[lang].buttons.cv}
         <TbFileCv />
       </Button>
     </>

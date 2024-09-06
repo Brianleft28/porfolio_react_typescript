@@ -12,28 +12,31 @@ import {
 } from "@nextui-org/react";
 
 import { Link as RouterLink } from "react-router-dom";
-
+import LangController from "./langController/LangController";
 import { useContext, useEffect, useState } from "react";
 import Logo from "./logo/Logo";
 import RedesSociales from "./redes/RedesSociales";
 import ThemeController from "./thtmeController/ThemeController";
 import { ThemeContext } from "../../../context/Theme";
+import { LangContext } from "../../../context/Lang";
 
+type Lang = 'en' | 'es';
 
 interface MenuItem {
+  name: { [key in Lang]: string };
   href: string;
-  name: string;
   isActive: boolean;
 }
 
 const Navbar = () => {
   const { theme } = useContext(ThemeContext);
-  
+  const { lang } = useContext(LangContext);
+
   const initialMenuItems = [
-    { name: "Projects", href: "/projects", isActive: false },
-    { name: "Skills", href: "/skills", isActive: false },
-    { name: "Experience", href: "/experience", isActive: false },
-    { name: "Contact", href: "/contact", isActive: false },
+    { name: {en: 'Projects', es: "Proyectos"}, href: "/projects", isActive: false },
+    { name: {en: 'Skills', es: "Habilidades"}, href: "/skills", isActive: false },
+    { name: {en: 'Experience', es: "Experiencia"}, href: "/experience", isActive: false },
+    { name: {en: 'Contact', es: "Contacto"}, href: "/contact", isActive: false },
   ];
 
   const [menuItems, setMenuItems] = useState(() => {
@@ -43,13 +46,12 @@ const Navbar = () => {
 
   useEffect(() => {
     localStorage.setItem("menuItems", JSON.stringify(menuItems));
+    console.log("Menu items", menuItems);
   }, [menuItems]);
 
   const handleMenuItemClick = (index: number) => {
     const newMenuItems = menuItems.map((item: MenuItem, i: number) => {
       if (i === index) {
-        console.log("Menu item", item.href, "href");
-        console.log(`Menu item ${index}, ${item.name} clicked`);
         return { ...item, isActive: true };
       }
       return { ...item, isActive: false };
@@ -67,12 +69,15 @@ const Navbar = () => {
 
   return (
     <NextUINavbar
-      className={`${theme} `}
+      className={`${theme} selection:bg-none`}
       disableAnimation={false}
       isBlurred={true}
-      isBordered={true}
+      isBordered={false}
+      position="sticky"
+      maxWidth="xl"
+
     >
-      <NavbarContent className="sm:hidden" justify="start">
+      <NavbarContent className="flex sm:flex lg:hidden" justify="start">
         <NavbarMenuToggle />
       </NavbarContent>
 
@@ -84,18 +89,19 @@ const Navbar = () => {
           <Logo />
         </NavbarBrand>
       </NavbarContent>
-
+        
+        {/* Navbar Content SM */}
       <NavbarContent onClick={desactiveMenuItems} className="hidden sm:flex gap-4 " justify="start">
         <NavbarBrand>
           <Logo />
         </NavbarBrand>
       </NavbarContent>
-
-      <NavbarContent className="hidden sm:flex gap-4 gap-x-8 " justify="end">
+    {/* Navbar Content XL */}
+      <NavbarContent className="hidden sm:flex md:flex gap-4 gap-x-8 " justify="end">
         {menuItems.map((item: MenuItem, index: number) => (
           <NavbarItem
-            key={`${item}-${index}`}
-            className="link hover:-translate-y-0.5 transition-all dutaion-300 hover:scale-105"
+            key={`${item.name[lang]}-${index} `}
+            className="link hover:-translate-y-0.5 transition-all duration-300 hover:scale-105"
           >
             <Link
               as={RouterLink}
@@ -104,42 +110,63 @@ const Navbar = () => {
               size="sm"
               onPress={() => handleMenuItemClick(index)}
             >
-              {item.name}
+              {item.name[lang]}
             </Link>
           </NavbarItem>
         ))}
         {/* DIVIDER */}
-        <Divider className="w-0.5 h-7 bg-divider" orientation="vertical" />
+        <Divider className="w-0.5 h-7 bg-divider hidden lg:flex" orientation="vertical" />
         {/* Redes sociales */}
-        <NavbarItem className="flex gap-2">
+        <NavbarItem className="gap-2 hidden lg:flex">
           <RedesSociales style="redes" />
         </NavbarItem>
         {/* DIVIDER Y THEME CONTROLLER */}
-        <Divider className="w-0.5 h-7 bg-divider" orientation="vertical" />
-        <NavbarItem className="flex gap-2">
+        
+        <Divider className="w-0.5 h-7 bg-divider hidden lg:hidden xl:flex" orientation="vertical" />
+        <NavbarItem className="hidden xl:flex">
           <ThemeController />
         </NavbarItem>
+        {/* DIVIDER Y LANG CONTROLLER */}
+        <Divider className="w-0.5 h-7 bg-divider hidden lg:hidden xl:flex" orientation="vertical" />
+        <NavbarItem className="hidden  xl:flex">
+          <LangController />
+        </NavbarItem>
       </NavbarContent>
-      <NavbarMenu className="futuristic-minimalist sm:hidden flex">
+
+      {/* Navbar Menu Mobile */}
+      <NavbarMenu className={`${theme} bg-transparent flex items-center justify-start sm:flex lg:hidden`}>
+        <div className="flex items-center justify-center">
+        <Divider className="w-52 md:hidden flex mt-3 h-0.5 bg-divider" />
+        </div>
         {menuItems.map((item: MenuItem, index: number) => (
-          <NavbarMenuItem key={`${item}-${index}`}>
+          <NavbarMenuItem className="items-center justify-center flex" key={`${item}-${index}`}>
             <Link
               as={RouterLink}
               to={item.href}
-              color={item.isActive ? "secondary" : "foreground"}
+              color={item.isActive ? "secondary" : "foreground" }
               size="md"
               onPress={() => handleMenuItemClick(index)}
+              className="md:hidden  justify-center items-center mb-3 md:mb-0"
             >
-              {item.name}
+              {item.name[lang]}
             </Link>
           </NavbarMenuItem>
         ))}
-        <NavbarItem className="flex gap-2 hover:-translate-y-0.5 transition-all dutaion-300 hover:scale-100">
-          <RedesSociales style="redes" />
-        </NavbarItem>
-        <NavbarItem className="flex gap-2 hover:-translate-y-0.5 transition-all dutaion-300 hover:scale-100">
-          <ThemeController />
-        </NavbarItem>
+
+        <div className="flex flex-col justify-center items-center ">
+          <Divider className="w-52 mb-3 h-0.5 bg-divider" />
+          <div className=" text-foreground md:text-2xl font-secondary">Mis redes</div>
+            <NavbarItem className="flex gap-2 hover:-translate-y-0.5 transition-all">
+              <RedesSociales style="redes" />
+            </NavbarItem>
+        </div>
+        <div className="flex flex-col justify-center items-center ">
+            <Divider className="w-52 mb-3 h-0.5 bg-divider" />
+            <NavbarItem className="flex gap-2 hover:-translate-y-0.5 transition-all">
+              <ThemeController />
+              <LangController />
+            </NavbarItem>
+        </div>
       </NavbarMenu>
     </NextUINavbar>
   );
