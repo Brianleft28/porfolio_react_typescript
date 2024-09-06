@@ -146,7 +146,7 @@ const Navbar = () => {
               color={item.isActive ? "secondary" : "foreground" }
               size="md"
               onPress={() => handleMenuItemClick(index)}
-              className="md:hidden  justify-center items-center mb-3 md:mb-0"
+              className="md:hidden sm:hidden  justify-center items-center mb-3 md:mb-0"
             >
               {item.name[lang]}
             </Link>
