@@ -20,7 +20,7 @@ import ThemeController from "./thtmeController/ThemeController";
 import { ThemeContext } from "../../../context/Theme";
 import { LangContext } from "../../../context/Lang";
 
-type Lang = 'en' | 'es';
+type Lang = "en" | "es";
 
 interface MenuItem {
   name: { [key in Lang]: string };
@@ -33,10 +33,26 @@ const Navbar = () => {
   const { lang } = useContext(LangContext);
 
   const initialMenuItems = [
-    { name: {en: 'Projects', es: "Proyectos"}, href: "/projects", isActive: false },
-    { name: {en: 'Skills', es: "Habilidades"}, href: "/skills", isActive: false },
-    { name: {en: 'Experience', es: "Experiencia"}, href: "/experience", isActive: false },
-    { name: {en: 'Contact', es: "Contacto"}, href: "/contact", isActive: false },
+    {
+      name: { en: "Projects", es: "Proyectos" },
+      href: "/projects",
+      isActive: false,
+    },
+    {
+      name: { en: "Skills", es: "Habilidades" },
+      href: "/skills",
+      isActive: false,
+    },
+    {
+      name: { en: "Experience", es: "Experiencia" },
+      href: "/experience",
+      isActive: false,
+    },
+    {
+      name: { en: "Contact", es: "Contacto" },
+      href: "/contact",
+      isActive: false,
+    },
   ];
 
   const [menuItems, setMenuItems] = useState(() => {
@@ -58,14 +74,13 @@ const Navbar = () => {
     });
     setMenuItems(newMenuItems);
   };
- 
+
   const desactiveMenuItems = () => {
-    const newMenuItems = menuItems.map((item: MenuItem) => { 
+    const newMenuItems = menuItems.map((item: MenuItem) => {
       return { ...item, isActive: false };
     });
     setMenuItems(newMenuItems);
-  }
-
+  };
 
   return (
     <NextUINavbar
@@ -75,29 +90,32 @@ const Navbar = () => {
       isBordered={false}
       position="sticky"
       maxWidth="xl"
-
     >
       <NavbarContent className="flex sm:flex lg:hidden" justify="start">
         <NavbarMenuToggle />
       </NavbarContent>
 
-      <NavbarContent
-        className="sm:hidden pr-3"
-        justify="center"
-      >
+      <NavbarContent className="sm:hidden pr-3" justify="center">
         <NavbarBrand onClick={desactiveMenuItems}>
           <Logo />
         </NavbarBrand>
       </NavbarContent>
-        
-        {/* Navbar Content SM */}
-      <NavbarContent onClick={desactiveMenuItems} className="hidden sm:flex gap-4 " justify="start">
+
+      {/* Navbar Content SM */}
+      <NavbarContent
+        onClick={desactiveMenuItems}
+        className="hidden sm:flex gap-4 "
+        justify="start"
+      >
         <NavbarBrand>
           <Logo />
         </NavbarBrand>
       </NavbarContent>
-    {/* Navbar Content XL */}
-      <NavbarContent className="hidden sm:flex md:flex gap-4 gap-x-8 " justify="end">
+      {/* Navbar Content XL */}
+      <NavbarContent
+        className="hidden sm:flex md:flex gap-4 gap-x-8 "
+        justify="end"
+      >
         {menuItems.map((item: MenuItem, index: number) => (
           <NavbarItem
             key={`${item.name[lang]}-${index} `}
@@ -115,35 +133,49 @@ const Navbar = () => {
           </NavbarItem>
         ))}
         {/* DIVIDER */}
-        <Divider className="w-0.5 h-7 bg-divider hidden lg:flex" orientation="vertical" />
+        <Divider
+          className="w-0.5 h-7 bg-divider hidden lg:flex"
+          orientation="vertical"
+        />
         {/* Redes sociales */}
         <NavbarItem className="gap-2 hidden lg:flex">
           <RedesSociales style="redes" />
         </NavbarItem>
         {/* DIVIDER Y THEME CONTROLLER */}
-        
-        <Divider className="w-0.5 h-7 bg-divider hidden lg:hidden xl:flex" orientation="vertical" />
+
+        <Divider
+          className="w-0.5 h-7 bg-divider hidden lg:hidden xl:flex"
+          orientation="vertical"
+        />
         <NavbarItem className="hidden xl:flex">
           <ThemeController />
         </NavbarItem>
         {/* DIVIDER Y LANG CONTROLLER */}
-        <Divider className="w-0.5 h-7 bg-divider hidden lg:hidden xl:flex" orientation="vertical" />
+        <Divider
+          className="w-0.5 h-7 bg-divider hidden lg:hidden xl:flex"
+          orientation="vertical"
+        />
         <NavbarItem className="hidden  xl:flex">
           <LangController />
         </NavbarItem>
       </NavbarContent>
 
       {/* Navbar Menu Mobile */}
-      <NavbarMenu className={`${theme} bg-transparent flex items-center justify-start sm:flex lg:hidden`}>
+      <NavbarMenu
+        className={`${theme} bg-transparent flex items-center justify-start sm:flex lg:hidden`}
+      >
         <div className="flex items-center justify-center">
-        <Divider className="w-52 md:hidden flex mt-3 h-0.5 bg-divider" />
+          <Divider className="w-52 md:hidden flex mt-3 h-0.5 bg-divider" />
         </div>
         {menuItems.map((item: MenuItem, index: number) => (
-          <NavbarMenuItem className="items-center justify-center flex" key={`${item}-${index}`}>
+          <NavbarMenuItem
+            className="items-center justify-center flex"
+            key={`${item}-${index}`}
+          >
             <Link
               as={RouterLink}
               to={item.href}
-              color={item.isActive ? "secondary" : "foreground" }
+              color={item.isActive ? "secondary" : "foreground"}
               size="md"
               onPress={() => handleMenuItemClick(index)}
               className="md:hidden sm:hidden  justify-center items-center mb-3 md:mb-0"
@@ -155,17 +187,19 @@ const Navbar = () => {
 
         <div className="flex flex-col justify-center items-center ">
           <Divider className="w-52 mb-3 h-0.5 bg-divider" />
-          <div className=" text-foreground md:text-2xl font-secondary">Mis redes</div>
-            <NavbarItem className="flex gap-2 hover:-translate-y-0.5 transition-all">
-              <RedesSociales style="redes" />
-            </NavbarItem>
+          <div className=" text-foreground md:text-2xl font-secondary">
+            Mis redes
+          </div>
+          <NavbarItem className="flex gap-2 hover:-translate-y-0.5 transition-all">
+            <RedesSociales style="redes" />
+          </NavbarItem>
         </div>
         <div className="flex flex-col justify-center items-center ">
-            <Divider className="w-52 mb-3 h-0.5 bg-divider" />
-            <NavbarItem className="flex gap-2 hover:-translate-y-0.5 transition-all">
-              <ThemeController />
-              <LangController />
-            </NavbarItem>
+          <Divider className="w-52 mb-3 h-0.5 bg-divider" />
+          <NavbarItem className="flex gap-2 hover:-translate-y-0.5 transition-all">
+            <ThemeController />
+            <LangController />
+          </NavbarItem>
         </div>
       </NavbarMenu>
     </NextUINavbar>
