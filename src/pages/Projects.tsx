@@ -1,32 +1,23 @@
-import {
-  Card,
-  CardBody,
-  CardFooter,
-  CardHeader,
-  Divider,
-} from "@nextui-org/react";
-import React from "react";
-
+import { useContext } from "react";
+import { LangContext } from "../context/Lang";
+import Wrapper from "../components/features/Projects/Wrapper";
+import CardProject from "../components/features/Projects/CardProject";
 const Projects = () => {
+  const { lang } = useContext(LangContext);
+
   return (
     <div className="">
-      <div className="col-md-12 flex">
-        <Card
-          shadow="lg"
-          className="mb-4 bg-content1  p-3"
-          isBlurred={true}
-          fullWidth={true}
-          radius="none"
-        >
-          <CardHeader className="flex flex-col md:flex-row justify-center items-center gap-4">
-            <p className="text-secondary text-center md:text-start text-3xl md:text-4xl lg:text-5xl font-bold tracking-wide leading-tight">
-              Projects
-            </p>
-            <Divider orientation="vertical" className="h-7 hidden md:flex" />
-          </CardHeader>
-          <CardBody></CardBody>
-          <CardFooter>asd</CardFooter>
-        </Card>
+      <div className="col-span-12 md:min-w-full">
+        <div className="flex">
+          <Wrapper lang={lang}>
+            <CardProject
+              img="https://ethic.es/wp-content/uploads/2023/03/imagen.jpg"
+              badge={["React", "Next.js"]}
+              title="Memorandum"
+              description=" Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem, nostrum voluptates. Nobis delectus nesciunt architecto eius cupiditate quaerat porro! Eum temporibus harum eius blanditiis ducimus! Maiores ex nobis ab minus."
+            />
+          </Wrapper>
+        </div>
       </div>
     </div>
   );
