@@ -1,5 +1,3 @@
-import React from "react";
-
 export const texts = {
   en: {
     greeting: "Hello, I'm",

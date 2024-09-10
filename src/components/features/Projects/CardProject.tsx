@@ -15,11 +15,15 @@ const CardProject: React.FC<CardProjectProps> = ({
   img,
 }) => {
   return (
-    <div className="shadow-sm bg-gradient-to-b from-content1 max-w-[450px] p-4 hover:cursor-pointer hover:-translate-y-1 hover:shadow-md rounded-none transition-all duration-250">
+    <div className="">
       <h3 className="text-primary text-xl font-bold mb-2">{title}</h3>
       {/* img */}
       <div className="flex justify-center mb-3 bg-black ">
-        <img src={`${img}`} alt="project" className="w-1/2" />
+        <img
+          src={`${img}`}
+          alt="project"
+          className="w-full hover: h-full object-cover"
+        />
       </div>
       <div className="flex flex-row mb-3 gap-x-2">
         {badge.map((b, i) => (
@@ -28,7 +32,7 @@ const CardProject: React.FC<CardProjectProps> = ({
           </Chip>
         ))}
       </div>
-      <p className="font-secondary text-base">{description}</p>
+      <p className="font-secondary text-base line-clamp-3">{description}</p>
     </div>
   );
 };

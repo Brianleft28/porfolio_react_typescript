@@ -2,6 +2,7 @@ export interface ProjectDetails {
   id: number;
   key: number;
   title: string;
+  github: string;
   description: string;
   href: string;
   badge: string[];
