@@ -26,7 +26,10 @@ export const projects: Project[] = [
       href: "https://www.google.com",
       github: "https://github.com/",
       badge: ["React", "Tailwind"],
-      img: "https://ethic.es/wp-content/uploads/2023/03/imagen.jpg",
+      img: [
+        "https://ethic.es/wp-content/uploads/2023/03/imagen.jpg",
+        "https://www.mundodeportivo.com/alfabeta/hero/2024/08/esta-habilidad-de-luffy-sera-crucial-para-que-evite-el-mismo-destino-de-gol-d.-roger.jpg?width=768&aspect_ratio=16:9&format=nowebp",
+      ],
     },
     en: {
       id: 1,
@@ -37,7 +40,10 @@ export const projects: Project[] = [
       href: "https://www.google.com",
       github: "https://github.com/",
       badge: ["React", "Tailwind"],
-      img: "https://ethic.es/wp-content/uploads/2023/03/imagen.jpg",
+      img: [
+        "https://ethic.es/wp-content/uploads/2023/03/imagen.jpg",
+        "https://www.mundodeportivo.com/alfabeta/hero/2024/08/esta-habilidad-de-luffy-sera-crucial-para-que-evite-el-mismo-destino-de-gol-d.-roger.jpg?width=768&aspect_ratio=16:9&format=nowebp",
+      ],
     },
   },
   {
@@ -50,7 +56,7 @@ export const projects: Project[] = [
       href: "https://www.google.com",
       github: "https://github.com/",
       badge: ["React", "Tailwind"],
-      img: "https://ethic.es/wp-content/uploads/2023/03/imagen.jpg",
+      img: ["https://ethic.es/wp-content/uploads/2023/03/imagen.jpg"],
     },
     en: {
       id: 2,
@@ -61,7 +67,7 @@ export const projects: Project[] = [
       href: "https://www.google.com",
       github: "https://github.com/",
       badge: ["React", "Tailwind"],
-      img: "https://ethic.es/wp-content/uploads/2023/03/imagen.jpg",
+      img: ["https://ethic.es/wp-content/uploads/2023/03/imagen.jpg"],
     },
   },
   {
@@ -74,7 +80,7 @@ export const projects: Project[] = [
       href: "https://www.google.com",
       github: "https://github.com/",
       badge: ["React", "Tailwind"],
-      img: "https://ethic.es/wp-content/uploads/2023/03/imagen.jpg",
+      img: ["https://ethic.es/wp-content/uploads/2023/03/imagen.jpg"],
     },
     en: {
       id: 3,
@@ -85,7 +91,7 @@ export const projects: Project[] = [
       href: "https://www.google.com",
       github: "https://github.com/",
       badge: ["React", "Tailwind"],
-      img: "https://ethic.es/wp-content/uploads/2023/03/imagen.jpg",
+      img: ["https://ethic.es/wp-content/uploads/2023/03/imagen.jpg"],
     },
   },
 ];

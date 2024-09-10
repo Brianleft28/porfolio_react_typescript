@@ -56,11 +56,13 @@ const Modal: React.FC<ModalProps> = ({ lang, project }) => {
                 {project[lang].title}
               </ModalHeader>
               <ModalBody className="flex justify-center">
-                <img
-                  src={`${project[lang].img}`}
-                  alt="project"
-                  className="w-full hover: h-full object-cover"
-                />
+                {project[lang].img.map((img, i) => (
+                  <img
+                    src={img}
+                    alt={`project-image-${i}`}
+                    className="w-full h-full object-cover"
+                  />
+                ))}
                 <div className="d-flex">
                   {project[lang].badge.map((badge, i) => (
                     <Chip

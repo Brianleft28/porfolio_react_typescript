@@ -6,7 +6,7 @@ export interface ProjectDetails {
   description: string;
   href: string;
   badge: string[];
-  img: string;
+  img: string[];
 }
 
 export interface Project {

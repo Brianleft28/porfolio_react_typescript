@@ -20,7 +20,7 @@ const Projects = () => {
               className=" mx-3 rounded-sm shadow-sm bg-gradient-to-b from-content1 max-w-[450px] p-4 hover:cursor-pointer hover:-translate-y-1 hover:shadow-md rounded-e-md transition-all duration-250 hover:border-b-secondary border-b-primary border-b-2"
             >
               <CardProject
-                img={project[lang].img}
+                img={project[lang].img[0]}
                 badge={project[lang].badge}
                 title={project[lang].title}
                 description={project[lang].description}
