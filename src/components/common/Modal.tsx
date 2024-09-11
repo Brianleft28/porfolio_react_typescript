@@ -8,7 +8,10 @@ import {
   useDisclosure,
   Chip,
   Link,
+  Divider,
 } from "@nextui-org/react";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from 'react-responsive-carousel';
 import { Project } from "../../types";
 import { Lang } from "../../context/Lang";
 import { ThemeContext } from "../../context/Theme";
@@ -43,8 +46,8 @@ const Modal: React.FC<ModalProps> = ({ lang, project }) => {
         }}
         backdrop="blur"
         shadow="md"
-        size="xl"
-        scrollBehavior="outside"
+        size="2xl"
+        scrollBehavior="inside"
         onOpenChange={onOpenChange}
         isDismissable={false}
         isKeyboardDismissDisabled={true}
@@ -52,28 +55,43 @@ const Modal: React.FC<ModalProps> = ({ lang, project }) => {
         <ModalContent>
           {(onClose) => (
             <>
-              <ModalHeader className="flex flex-col gap-1">
+              <ModalHeader className="flex text-3xl flex-col gap-1">
                 {project[lang].title}
               </ModalHeader>
+              <Divider className="w-[80%] mx-auto bg-divider" />
               <ModalBody className="flex justify-center">
+              {/* Carrusel */}
+              <Carousel
+                showThumbs={true}
+                infiniteLoop
+                useKeyboardArrows
+                autoPlay
+                showStatus={true}
+              >
                 {project[lang].img.map((img, i) => (
-                  <img
-                    src={img}
-                    alt={`project-image-${i}`}
-                    className="w-full h-full object-cover"
-                  />
+                  <div key={i}>
+                    <img
+                      src={img}
+                      alt={`project-image-${i}`}
+                      className="w-full h-auto object-cover"
+                    />
+                  </div>
                 ))}
+              </Carousel>
                 <div className="d-flex">
                   {project[lang].badge.map((badge, i) => (
-                    <Chip
-                      key={i}
-                      className="mr-1 mb-2 shadow-sm"
-                      variant="dot"
-                      color="secondary"
-                      size="sm"
+                    <div
+                    key={i}
                     >
-                      {badge}
-                    </Chip>
+                      <Chip
+                        className="mr-1 mb-2 shadow-sm"
+                        variant="dot"
+                        color="secondary"
+                        size="sm"
+                        >
+                          {badge}
+                      </Chip>
+                    </div>
                   ))}
                 </div>
                 <p>{project[lang].description}</p>
