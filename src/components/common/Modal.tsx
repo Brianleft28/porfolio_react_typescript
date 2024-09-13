@@ -11,7 +11,7 @@ import {
   Divider,
 } from "@nextui-org/react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { Carousel } from 'react-responsive-carousel';
+import { Carousel } from "react-responsive-carousel";
 import { Project } from "../../types";
 import { Lang } from "../../context/Lang";
 import { ThemeContext } from "../../context/Theme";
@@ -47,7 +47,7 @@ const Modal: React.FC<ModalProps> = ({ lang, project }) => {
         backdrop="blur"
         shadow="md"
         size="2xl"
-        scrollBehavior="inside"
+        scrollBehavior="outside"
         onOpenChange={onOpenChange}
         isDismissable={false}
         isKeyboardDismissDisabled={true}
@@ -60,36 +60,34 @@ const Modal: React.FC<ModalProps> = ({ lang, project }) => {
               </ModalHeader>
               <Divider className="w-[80%] mx-auto bg-divider" />
               <ModalBody className="flex justify-center">
-              {/* Carrusel */}
-              <Carousel
-                showThumbs={true}
-                infiniteLoop
-                useKeyboardArrows
-                autoPlay
-                showStatus={true}
-              >
-                {project[lang].img.map((img, i) => (
-                  <div key={i}>
-                    <img
-                      src={img}
-                      alt={`project-image-${i}`}
-                      className="w-full h-auto object-cover"
-                    />
-                  </div>
-                ))}
-              </Carousel>
-                <div className="d-flex">
+                {/* Carrusel */}
+                <Carousel
+                  showThumbs={false}
+                  infiniteLoop
+                  useKeyboardArrows
+                  autoPlay
+                  showStatus={true}
+                >
+                  {project[lang].img.map((img, i) => (
+                    <div key={i}>
+                      <img
+                        src={img}
+                        alt={`project-image-${i}`}
+                        className="w-full h-auto object-cover"
+                      />
+                    </div>
+                  ))}
+                </Carousel>
+                <div className="flex gap-x-1">
                   {project[lang].badge.map((badge, i) => (
-                    <div
-                    key={i}
-                    >
+                    <div key={i}>
                       <Chip
                         className="mr-1 mb-2 shadow-sm"
                         variant="dot"
                         color="secondary"
                         size="sm"
-                        >
-                          {badge}
+                      >
+                        {badge}
                       </Chip>
                     </div>
                   ))}
