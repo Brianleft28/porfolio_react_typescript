@@ -3,7 +3,7 @@ import React from "react";
 
 interface CardProjectProps {
   title: string;
-  description: string;
+  description: React.ReactNode;
   img: string;
   badge: string[];
 }
@@ -25,16 +25,26 @@ const CardProject: React.FC<CardProjectProps> = ({
           className="w-full hover: h-full object-cover"
         />
       </div>
-      <div className="flex flex-row mb-3 gap-x-2">
+      <div className="flex flex-row flex-wrap gap-2 mb-3 gap-x-3">
         {badge.map((b, i) => (
           <Chip key={i} variant="dot" color="secondary" size="sm">
             {b}
           </Chip>
         ))}
       </div>
-      <p className="font-secondary text-base line-clamp-3">{description}</p>
+      <div className="mt-2 line-clamp-3 font-secondary mb-3">
+      {Array.isArray(description) ? (
+          description.map((paragraph, index) => (
+            <p key={index} className="mb-2 ">
+              {paragraph}
+            </p>
+          ))
+        ) : (
+          <p>{description}</p>
+        )}
+      </div>
     </div>
   );
-};
+}
 
 export default CardProject;

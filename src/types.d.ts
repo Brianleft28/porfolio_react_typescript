@@ -3,7 +3,7 @@ export interface ProjectDetails {
   key: number;
   title: string;
   github: string;
-  description: string;
+  description: React.ReactNode;
   href: string;
   badge: string[];
   img: string[];

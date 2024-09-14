@@ -16,6 +16,7 @@ import { Project } from "../../types";
 import { Lang } from "../../context/Lang";
 import { ThemeContext } from "../../context/Theme";
 import { useContext } from "react";
+import { projects } from "../features/Projects/Texts";
 
 interface ModalProps {
   lang: Lang;
@@ -23,6 +24,8 @@ interface ModalProps {
 }
 
 const Modal: React.FC<ModalProps> = ({ lang, project }) => {
+  console.log(typeof project.en.description);
+ 
   const { theme } = useContext(ThemeContext);
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
   return (
@@ -92,7 +95,9 @@ const Modal: React.FC<ModalProps> = ({ lang, project }) => {
                     </div>
                   ))}
                 </div>
-                <p>{project[lang].description}</p>
+                <div className="mt-3 font-secondary">
+                {project[lang].description}
+                </div>
               </ModalBody>
               <ModalFooter className="">
                 <Button
