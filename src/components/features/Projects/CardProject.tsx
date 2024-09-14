@@ -32,10 +32,10 @@ const CardProject: React.FC<CardProjectProps> = ({
           </Chip>
         ))}
       </div>
-      <div className="mt-2 line-clamp-3 font-secondary mb-3">
+      <div className="mt-2 line-clamp-3 ">
       {Array.isArray(description) ? (
           description.map((paragraph, index) => (
-            <p key={index} className="mb-2 ">
+            <p key={index} className="mb-2 line-clamp-2 font-secondary">
               {paragraph}
             </p>
           ))
