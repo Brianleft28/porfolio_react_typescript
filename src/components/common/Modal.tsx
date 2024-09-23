@@ -26,7 +26,7 @@ interface ModalProps {
 
 const Modal: React.FC<ModalProps> = ({ lang, project }) => {
   console.log(typeof project.en.description);
- 
+
   const { theme } = useContext(ThemeContext);
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
@@ -67,55 +67,46 @@ const Modal: React.FC<ModalProps> = ({ lang, project }) => {
               <ModalBody className="flex justify-center">
                 {/* Carrusel */}
                 <div className="bg-gradient-to-br from-background via-content2 to-content3 px-3 py-2">
-                <Carousel
-                  showThumbs={false}
-                  infiniteLoop
-                  useKeyboardArrows
-                  autoPlay
-                  showStatus={true}
+                  <Carousel
+                    showThumbs={false}
+                    infiniteLoop
+                    useKeyboardArrows
+                    autoPlay
+                    showStatus={true}
                   >
-                  {project[lang].img.map((img, i) => (
-                    <div key={i}>
-                      <img
-                        src={img}
-                        alt={`project-image-${i}`}
-                        className="w-full h-auto object-cover"
+                    {project[lang].img.map((img, i) => (
+                      <div key={i}>
+                        <img
+                          src={img}
+                          alt={`project-image-${i}`}
+                          className="w-full h-auto object-cover"
                         />
-                    </div>
-                  ))}
-                </Carousel>
-                <div className="flex gap-x-2 mt-3">
-                  {project[lang].badge.map((badge, i) => (
-                    <div key={i}>
-                      <Chip
-                        className="mr-1 mb-2 shadow-sm"
-                        variant="dot"
-                        color="secondary"
-                        size="sm"
+                      </div>
+                    ))}
+                  </Carousel>
+                  <div className="flex gap-x-2 mt-3">
+                    {project[lang].badge.map((badge, i) => (
+                      <div key={i}>
+                        <Chip
+                          className="mr-1 mb-2 shadow-sm"
+                          variant="dot"
+                          color="secondary"
+                          size="sm"
                         >
-                        {badge}
-                      </Chip>
+                          {badge}
+                        </Chip>
+                      </div>
+                    ))}
+                  </div>
+                  <Divider className="w-[80%] h-0.5 mt-1 mx-auto bg-divider" />
+
+                  <div
+                    className={`mt-3  border-x-2 border-content4 shadow-md font-secondary px-8 py-2 text-start`}
+                  >
+                    <div className="leading-relaxed font-secondary">
+                      {project[lang].description}
                     </div>
-                  ))}
-                </div>
-              <Divider className="w-[80%] h-0.5 mt-1 mx-auto bg-divider" />
-               
-        <div className={`mt-3 leading-normal border-x-2 border-content4 shadow-md font-secondary p-8 text-start text-success-500 bg-default-800`}>
-        {project[lang].description.map((paragraph, index) => (
-            <div key={index} className="mb-3">
-              {
-            <Typewriter
-            words={[paragraph]}
-            loop={1} // No loop
-            cursorStyle="|"
-            typeSpeed={Math.floor(Math.random() * 100) /2}
-            deleteSpeed={25}
-            delaySpeed={25}
-          />
-              }
-            </div>
-          ))}   
-            </div>
+                  </div>
                 </div>
               </ModalBody>
               <ModalFooter className="">

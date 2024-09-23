@@ -14,6 +14,9 @@ const CardProject: React.FC<CardProjectProps> = ({
   badge,
   img,
 }) => {
+  const combinedDescription = Array.isArray(description)
+    ? description.join(" ")
+    : description;
   return (
     <div className="">
       <h3 className="text-primary text-xl font-bold mb-2">{title}</h3>
@@ -32,19 +35,11 @@ const CardProject: React.FC<CardProjectProps> = ({
           </Chip>
         ))}
       </div>
-      <div className="mt-2 line-clamp-3 ">
-      {Array.isArray(description) ? (
-          description.map((paragraph, index) => (
-            <p key={index} className="mb-2 line-clamp-2 font-secondary">
-              {paragraph}
-            </p>
-          ))
-        ) : (
-          <p>{description}</p>
-        )}
+      <div className="mt-2 mb-2 line-clamp-3">
+        <p className="line-clamp-3 font-secondary">{combinedDescription}</p>
       </div>
     </div>
   );
-}
+};
 
 export default CardProject;
