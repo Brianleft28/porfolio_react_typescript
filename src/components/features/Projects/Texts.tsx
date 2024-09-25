@@ -1,4 +1,6 @@
 import { Project } from "../../../types";
+
+
 import p1 from '../../../img/memorandum/p1.png';
 import p2 from '../../../img/memorandum/p1_0.png';
 import p3 from '../../../img/memorandum/p1_1.png';
@@ -6,6 +8,13 @@ import p4 from '../../../img/memorandum/p1_2.png';
 import p5 from '../../../img/memorandum/p1_3.png';
 import p6 from '../../../img/memorandum/p1_4.png';
 import p7 from '../../../img/memorandum/p1_5.png';
+
+import p1_1 from '../../../img/luzbelitoh/p1.png';
+import p2_1 from '../../../img/luzbelitoh/p1_1.png';
+import p3_1 from '../../../img/luzbelitoh/p1_2.png';
+import p4_1 from '../../../img/luzbelitoh/p1_3.png';
+import p5_1 from '../../../img/luzbelitoh/p1_4.png';
+
 export const texts = {
   en: {
     title: {
@@ -62,4 +71,45 @@ export const projects: Project[] = [
       img: [p1, p2, p3, p4, p5, p6, p7],
     },
   },
-];
+  {
+
+    es: {
+      id: 2,
+      key: 2,
+      title: "Luzbelitoh Discord Bot",
+     description: [
+        "Este bot de Discord está diseñado para proporcionar una amplia gama de funcionalidades que mejoran la experiencia del usuario en servidores de Discord. Desarrollado con Node.js y la biblioteca discord.js, el bot es altamente modular y escalable, permitiendo la fácil adición de nuevas características y comandos. El bot está diseñado con una arquitectura modular que facilita la adición de nuevas funcionalidades sin afectar las existentes."
+      ],
+      href: "https://www.google.com",
+      github: "https://github.com/Brianleft28/Luzbelitoh",
+      badge: ["Discord.js", "Node", "Javascript", "Google APIs"],
+      img: [
+        p3_1,
+        p1_1,
+        p2_1,
+        p4_1,
+        p5_1,
+      ],
+    },
+    
+    en: {
+      id: 2,
+      key: 2,
+      title: "Luzbelitoh Discord Bot",
+      description: [ 
+        "This Discord bot is designed to provide a wide range of functionalities that enhance the user experience in Discord servers. Developed with Node.js and the discord.js library, the bot is highly modular and scalable, allowing for the easy addition of new features and commands. The bot is designed with a modular architecture that facilitates the addition of new functionalities without affecting existing ones."
+      ],
+      href: "https://www.google.com",
+      github: "https://github.com/Brianleft28/Luzbelitoh",
+      badge: ["Discord.js", "Node", "Javascript", "Google APIs"],
+      img: [
+        p3_1, 
+        p1_1,
+        p2_1,
+        p4_1,
+        p5_1
+      ],
+    }
+  }
+  ]
+  

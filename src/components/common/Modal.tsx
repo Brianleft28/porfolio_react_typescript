@@ -34,9 +34,10 @@ const Modal: React.FC<ModalProps> = ({ lang, project }) => {
     <>
       <Button
         color="secondary"
-        variant="faded"
+        variant="ghost"
         fullWidth={true}
         className="mt-2"
+        radius="none"
         onPress={onOpen}
       >
         {lang === "es" ? "Ver más" : "View more"}
