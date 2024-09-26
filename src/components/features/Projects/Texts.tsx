@@ -15,6 +15,12 @@ import p3_1 from '../../../img/luzbelitoh/p1_2.png';
 import p4_1 from '../../../img/luzbelitoh/p1_3.png';
 import p5_1 from '../../../img/luzbelitoh/p1_4.png';
 
+import p1_2 from '../../../img/console/p1.png';
+import p2_2 from '../../../img/console/p1_1.png';
+import p3_2 from '../../../img/console/p1_2.png';
+import p4_2 from '../../../img/console/p1_3.png';
+
+
 export const texts = {
   en: {
     title: {
@@ -110,6 +116,42 @@ export const projects: Project[] = [
         p5_1
       ],
     }
+  },
+  {
+    es: {
+      id: 3,
+      key: 3,
+      title: "Aplicación de consola",
+      description: [
+        "Este proyecto es una aplicación de línea de comandos desarrollada en Node.js que verifica la existencia de usuarios en una base de datos remota a través de una API. Utiliza un archivo JSON local para obtener las credenciales de los usuarios y realiza solicitudes HTTP para validar cada usuario. Los resultados se muestran en una tabla en la consola."
+      ],
+      href: "#",
+      github: "https://github.com/Brianleft28/Auth_TEST",
+      badge: ["Node", "Axios", "chalk", "cli-table3"],
+      img: [
+        p1_2, 
+        p4_2,
+        p2_2,
+        p3_2
+      ],
+  } ,
+    en: {
+      id: 3,
+      key: 3,
+      title: "Console Application",
+      description: [
+        "This project is a command-line application developed in Node.js that verifies the existence of users in a remote database through an API. It uses a local JSON file to obtain user credentials and makes HTTP requests to validate each user. The results are displayed in a table in the console."
+      ],
+      href: "#",
+      github: "https://github.com/Brianleft28/Auth_TEST",
+      badge: ["Node", "Axios", "chalk", "cli-table3"],
+      img: [
+        p1_2, 
+        p4_2,
+        p2_2,
+        p3_2
+      ],
+    },
   }
   ]
   
