@@ -1,5 +1,5 @@
 import { Card, CardBody, CardHeader, Divider, Select, SelectItem } from "@nextui-org/react";
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import { Lang } from "../../../context/Lang";
 import { texts } from "./Texts";
 import { Category, CategoryContext } from "../../../context/Category";
@@ -10,10 +10,7 @@ interface WrapperProps {
 }
 
 const Wrapper: React.FC<WrapperProps> = ({ children, lang }) => {
-  const {category, setCategory} = useContext(CategoryContext);
-
-
-
+  const { setCategory} = useContext(CategoryContext);
 
   return (
     <Card
