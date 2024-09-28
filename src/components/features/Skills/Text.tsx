@@ -1,8 +1,15 @@
 export const texts = {
   en: {
-    title: "Skills",
+    title: {
+      main: "Skills",
+      secondary: "Some of my skills",
+    },
+
   },
   es: {
-    title: "Habilidades",
+    title: {
+      main: "Habilidades",
+      secondary: "Algunas de mis habilidades",
+    }
   },
 };
