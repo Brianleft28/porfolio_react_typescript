@@ -14,12 +14,10 @@ const CardProject: React.FC<CardProjectProps> = ({
   badge,
   img,
 }) => {
-  const combinedDescription = Array.isArray(description)
-    ? description.join(" ")
-    : description;
+
   return (
     <div className="">
-      <h3 className="text-primary text-xl font-bold mb-2">{title}</h3>
+      <h3 className="text-primary sm:text-[19px] text-center md:text-start text-xl font-bold mb-2">{title}</h3>
       {/* img */}
       <div className="flex justify-center mb-3 bg-black ">
         <img
@@ -36,7 +34,7 @@ const CardProject: React.FC<CardProjectProps> = ({
         ))}
       </div>
       <div className="mt-2 mb-2 line-clamp-3">
-        <p className="line-clamp-3 font-secondary">{combinedDescription}</p>
+        <div className="line-clamp-3 font-secondary">{description}</div>
       </div>
     </div>
   );

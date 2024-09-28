@@ -15,9 +15,7 @@ import { Carousel } from "react-responsive-carousel";
 import { Project } from "../../types";
 import { Lang } from "../../context/Lang";
 import { ThemeContext } from "../../context/Theme";
-import { useContext, useState } from "react";
-import { projects } from "../features/Projects/Texts";
-import { Typewriter } from "react-simple-typewriter";
+import { useContext } from "react";
 
 interface ModalProps {
   lang: Lang;
@@ -25,7 +23,6 @@ interface ModalProps {
 }
 
 const Modal: React.FC<ModalProps> = ({ lang, project }) => {
-  console.log(typeof project.en.description);
 
   const { theme } = useContext(ThemeContext);
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
@@ -99,10 +96,8 @@ const Modal: React.FC<ModalProps> = ({ lang, project }) => {
                       </div>
                     ))}
                   </div>
-                  <Divider className="w-[80%] h-0.5 mt-1 mx-auto bg-divider" />
-
                   <div
-                    className={`mt-3  border-x-2 border-content4 shadow-md font-secondary px-8 py-2 text-start`}
+                    className={`mt-3 border-2 border-content4 shadow-md font-secondary px-6 py-4 text-justify`}
                   >
                     <div className="leading-relaxed font-secondary">
                       {project[lang].description}
@@ -129,18 +124,6 @@ const Modal: React.FC<ModalProps> = ({ lang, project }) => {
                   onPress={onClose}
                 >
                   {lang === "es" ? "Ver en Github" : "View on Github"}
-                </Button>
-                <Button
-                  as={Link}
-                  target="_blank"
-                  fullWidth
-                  variant="bordered"
-                  radius="none"
-                  color="primary"
-                  href={project[lang].href}
-                  onPress={onClose}
-                >
-                  {lang === "es" ? "Ver online" : "View live code"}
                 </Button>
               </ModalFooter>
             </>
