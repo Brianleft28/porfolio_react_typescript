@@ -5,6 +5,7 @@ import { LangContext } from "../context/Lang";
 import SkillBody from "../components/features/Skills/SkillBody";
 
 const Skills = () => {
+
   const { lang } = useContext(LangContext);
 
   return (
