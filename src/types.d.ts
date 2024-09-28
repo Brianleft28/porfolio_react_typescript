@@ -1,9 +1,12 @@
+import { Category } from "./context/Category";
+
 export interface ProjectDetails {
   id: number;
   key: number;
+  category: Category;
   title: string;
   github: string;
-  description: string[];
+  description: React.ReactNode;
   href: string;
   badge: string[];
   img: string[];
