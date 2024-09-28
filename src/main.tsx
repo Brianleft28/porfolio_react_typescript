@@ -5,6 +5,7 @@ import { NextUIProvider } from "@nextui-org/react";
 import { ThemeProvider } from "./context/Theme.tsx";
 import MainComponent from "./MainComponent.tsx";
 import { LangProvider } from "./context/Lang.tsx";
+import { CategoryProvider } from "./context/Category.tsx";
 
 
 
@@ -13,7 +14,9 @@ createRoot(document.getElementById("root")!).render(
     <NextUIProvider>
       <ThemeProvider>
         <LangProvider>
-        <MainComponent />
+          <CategoryProvider>
+           <MainComponent />
+          </CategoryProvider>
         </LangProvider>
       </ThemeProvider>
     </NextUIProvider>
