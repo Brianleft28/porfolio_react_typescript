@@ -11,14 +11,9 @@ const ThemeController = () => {
     return savedIsChecked === "true"; 
   });
   
-  
   useEffect(() => {
     localStorage.setItem("isChecked", isChecked.toString());
   }, [isChecked]);
-
-  useEffect(() => {
-    console.log("isChecked", isChecked);
-  })
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const checked = event.target.checked;

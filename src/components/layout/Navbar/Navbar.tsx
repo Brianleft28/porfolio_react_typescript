@@ -62,7 +62,6 @@ const Navbar = () => {
 
   useEffect(() => {
     localStorage.setItem("menuItems", JSON.stringify(menuItems));
-    console.log("Menu items", menuItems);
   }, [menuItems]);
 
   const handleMenuItemClick = (index: number) => {
@@ -184,7 +183,6 @@ const Navbar = () => {
             </Link>
           </NavbarMenuItem>
         ))}
-
         <div className="flex flex-col justify-center items-center ">
           <Divider className="w-52 mb-3 h-0.5 bg-divider" />
           <div className=" text-foreground md:text-2xl font-secondary">
