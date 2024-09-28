@@ -1,6 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 
-export type Category = "all" | "backend" | "frontend" ;
+export type Category = "all" | "backend" | "frontend" | '' ;
 
 type CategoryContextType = {
   category: Category;
