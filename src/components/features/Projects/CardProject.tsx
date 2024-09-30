@@ -17,7 +17,7 @@ const CardProject: React.FC<CardProjectProps> = ({
 
   return (
     <div className="">
-      <h3 className="text-primary sm:text-[19px] text-center md:text-start text-xl font-bold mb-2">{title}</h3>
+      <h3 className="text-secondary sm:text-[19px] text-center md:text-start text-xl font-bold mb-2">{title}</h3>
       {/* img */}
       <div className="flex justify-center mb-3 bg-black ">
         <img

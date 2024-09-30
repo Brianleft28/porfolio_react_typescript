@@ -1,5 +1,4 @@
-import { CardBody } from "@nextui-org/react";
-import { texts } from "./Text";
+import { Card, CardBody } from "@nextui-org/react";
 import { Lang } from "../../../context/Lang";
 
 interface SkillBodyProps {
@@ -8,11 +7,18 @@ interface SkillBodyProps {
 
 const SkillBody: React.FC<SkillBodyProps> = ({ lang }) => {
   return (
-    <CardBody className="md:mt-3 mt-2 px-4">
-      <p className="md:text-lg text-md font-secondary text-center md:text-start">
-        {texts[lang].title.main}
-      </p>
+    <Card 
+    shadow="lg"
+    radius="none"
+    isBlurred={true}
+    className="mb-4 bg-transparent p-3"
+    fullWidth={true}
+    
+    >
+
+    <CardBody className="">
     </CardBody>
+    </Card>
   );
 };
 

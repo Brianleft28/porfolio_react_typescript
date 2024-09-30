@@ -125,6 +125,7 @@ const Navbar = () => {
               to={item.href}
               color={item.isActive ? "secondary" : "foreground"}
               size="sm"
+              className={`${item.isActive ? "font-bold" : ""}`}
               onPress={() => handleMenuItemClick(index)}
             >
               {item.name[lang]}
@@ -177,7 +178,10 @@ const Navbar = () => {
               color={item.isActive ? "secondary" : "foreground"}
               size="md"
               onPress={() => handleMenuItemClick(index)}
-              className="md:hidden sm:hidden  justify-center items-center mb-3 md:mb-0"
+              className={`md:hidden sm:hidden  justify-center items-center mb-3 md:mb-0
+              ${item.isActive ? "font-bold" : ""}`}
+          
+
             >
               {item.name[lang]}
             </Link>

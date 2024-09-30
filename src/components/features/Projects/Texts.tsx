@@ -37,8 +37,8 @@ export const texts = {
   },
   es: {
     title: {
-      main: "Mi Trabajo",
-      secondary: "Algunos de mis proyectos",
+      main: "Mis trabajos",
+      secondary: "Algunos proyectos",
     },
     options: [
       { key: "all", label: "Todos" },
@@ -92,7 +92,7 @@ export const projects: Project[] = [
       ),
       href: "https://www.google.com",
       github: "https://github.com/",
-      badge: ["SvelteKit", "Node", "Typescript", "SQL", "Express", "Tailwind"],
+      badge: ["Svelte", "Node", "SQL", "Bootstrap"],
       img: [p1, p2, p3, p4, p5, p6, p7],
     },
   },

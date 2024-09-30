@@ -18,7 +18,7 @@ const SkillHeader: React.FC<SkillHeaderProps> = ({ lang }) => {
             orientation="vertical"
             className="h-9 bg-divider hidden md:flex"
           />
-        <p className="font-secondary text-center md:text-start text-lg md:text-xl lg:text-2xl font-semibold shadow tracking-wide leading-tight">
+        <p className="font-secondary text-center md:text-start text-lg md:text-xl lg:text-2xl font-semibold tracking-wide leading-tight">
           {texts[lang].title.secondary}
         </p>
     </CardHeader>

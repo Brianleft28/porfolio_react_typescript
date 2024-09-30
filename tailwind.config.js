@@ -13,6 +13,34 @@ export default {
         primary: ["Inter", "sans-serif"],
         secondary: ["Space Mono", "monospace"],
       },
+      colors: {
+        primary: {
+          DEFAULT: "#9320E6", // Violeta profundo (base)
+          50: "#F5E8FF", // Violeta muy claro
+          100: "#E0BBFF", // Violeta suave
+          200: "#CC8EFF", // Violeta intermedio
+          300: "#B862FF", // Violeta más fuerte
+          400: "#A536FF", // Violeta vibrante
+          500: "#9320E6", // Violeta profundo
+          600: "#811ACC", // Violeta oscuro
+          700: "#6F15B3", // Violeta muy oscuro
+          800: "#5D1099", // Violeta oscuro
+          900: "#4B0B80", // Violeta muy profundo
+        },
+        secondary: {
+          DEFAULT: "#4DA94D", // Verde más brillante (base)
+          50: "#E6F2E6", // Verde claro
+          100: "#B3DAB3", // Verde suave
+          200: "#80C280", // Verde intermedio
+          300: "#4DA94D", // Verde más brillante
+          400: "#1A911A", // Verde vibrante
+          500: "#008800", // Verde fuerte
+          600: "#007B00", // Verde profundo
+          700: "#006F00", // Verde oscuro
+          800: "#006000", // Verde muy oscuro
+          900: "#005200", // Verde eléctrico más oscuro
+        },
+      }
     },
   },
   plugins: [],
@@ -47,30 +75,6 @@ export default {
               700: "#8D8D8F", // Gris claro
               800: "#9D9D9F", // Gris muy claro
               900: "#ADADAF", // Gris más claro
-            },
-            primary: {
-              50: "#E6F2FF", // Azul claro
-              100: "#B3DAFF", // Azul suave
-              200: "#80C2FF", // Azul intermedio
-              300: "#4DA9FF", // Azul más brillante
-              400: "#1A91FF", // Azul vibrante
-              500: "#0088FF", // Azul fuerte
-              600: "#007BFF", // Azul profundo
-              700: "#006FFF", // Azul oscuro
-              800: "#0060E6", // Azul muy oscuro
-              900: "#0052CC", // Azul eléctrico más oscuro
-            },
-            secondary: {
-              50: "#F5E8FF", // Violeta muy claro
-              100: "#E0BBFF", // Violeta suave
-              200: "#CC8EFF", // Violeta intermedio
-              300: "#B862FF", // Violeta más fuerte
-              400: "#A536FF", // Violeta vibrante
-              500: "#9320E6", // Violeta profundo
-              600: "#811ACC", // Violeta oscuro
-              700: "#6F15B3", // Violeta muy oscuro
-              800: "#5D1099", // Violeta oscuro
-              900: "#4B0B80", // Violeta muy profundo
             },
             success: {
               50: "#E9FBEF", // Verde muy claro
@@ -153,30 +157,6 @@ export default {
             700: "#808080", // Gris oscuro
             800: "#707070", // Gris muy oscuro
             900: "#606060", // Gris más oscuro
-          },
-          primary: {
-            50: "#E6F2FF", // Azul claro
-            100: "#B3DAFF", // Azul suave
-            200: "#80C2FF", // Azul intermedio
-            300: "#4DA9FF", // Azul más brillante
-            400: "#1A91FF", // Azul vibrante
-            500: "#0088FF", // Azul fuerte
-            600: "#007BFF", // Azul profundo
-            700: "#006FFF", // Azul oscuro
-            800: "#0060E6", // Azul muy oscuro
-            900: "#0052CC", // Azul eléctrico más oscuro
-          },
-          secondary: {
-            50: "#F5E8FF", // Violeta muy claro
-            100: "#E0BBFF", // Violeta suave
-            200: "#CC8EFF", // Violeta intermedio
-            300: "#B862FF", // Violeta más fuerte
-            400: "#A536FF", // Violeta vibrante
-            500: "#9320E6", // Violeta profundo
-            600: "#811ACC", // Violeta oscuro
-            700: "#6F15B3", // Violeta muy oscuro
-            800: "#5D1099", // Violeta oscuro
-            900: "#4B0B80", // Violeta muy profundo
           },
           success: {
             50: "#E9FBEF", // Verde muy claro

@@ -8,7 +8,6 @@ import { LangProvider } from "./context/Lang.tsx";
 import { CategoryProvider } from "./context/Category.tsx";
 
 
-
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <NextUIProvider>

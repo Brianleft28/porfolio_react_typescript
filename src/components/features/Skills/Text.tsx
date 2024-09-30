@@ -2,14 +2,18 @@ export const texts = {
   en: {
     title: {
       main: "Skills",
-      secondary: "Some of my skills",
+      secondary: "Ability tree",
     },
 
   },
   es: {
     title: {
       main: "Habilidades",
-      secondary: "Algunas de mis habilidades",
+      secondary: "Árbol de habilidades",
     }
   },
 };
+
+export const skills = [
+
+]

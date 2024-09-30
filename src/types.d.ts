@@ -16,3 +16,8 @@ export interface Project {
   es: ProjectDetails;
   en: ProjectDetails;
 }
+
+export interface SkillsDetails {
+  title: string;
+  skills: string[];
+}

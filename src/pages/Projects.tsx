@@ -24,7 +24,7 @@ const Projects = () => {
         {filteredProjects.map((project: Project, i: number) => (
           <div
             key={project[lang].key + i}
-            className="mx-3 rounded-sm shadow-sm  bg-gradient-to-b from-content1 max-w-[450px] p-4 hover:cursor-pointer hover:-translate-y-1 hover:shadow-md rounded-e-md transition-all duration-250 hover:border-b-secondary border-b-primary border-b-2"
+            className="mx-3 rounded-sm shadow-sm  bg-gradient-to-b from-content1 max-w-[275px] p-4 hover:cursor-pointer hover:-translate-y-0.5 hover:shadow-md rounded-e-md transition-all duration-250 hover:border-b-secondary border-b-primary border-b-2 border border-divider"
           >
             <CardProject
               img={project[lang].img[0]}

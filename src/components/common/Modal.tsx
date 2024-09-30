@@ -45,7 +45,7 @@ const Modal: React.FC<ModalProps> = ({ lang, project }) => {
         classNames={{
           body: "py-4",
           base: `bg-gradient-to-br ${theme} from-background via-content2 to-content3 text-foreground`,
-          backdrop: "bg-secondary-800/50 backdrop-opacity-80",
+          backdrop: "bg-foreground/50",
         }}
         backdrop="blur"
         shadow="md"
@@ -58,7 +58,7 @@ const Modal: React.FC<ModalProps> = ({ lang, project }) => {
         <ModalContent>
           {(onClose) => (
             <>
-              <ModalHeader className="flex text-3xl flex-col gap-1">
+              <ModalHeader className="text-secondary font-bold flex text-3xl flex-col gap-1">
                 {project[lang].title}
               </ModalHeader>
               <Divider className="w-[80%] mx-auto bg-divider" />
@@ -119,7 +119,8 @@ const Modal: React.FC<ModalProps> = ({ lang, project }) => {
                   target="_blank"
                   fullWidth
                   radius="none"
-                  color="primary"
+                  variant="shadow"
+                  color="secondary"
                   href={project[lang].github}
                   onPress={onClose}
                 >
