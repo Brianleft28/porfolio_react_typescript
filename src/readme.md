@@ -1,0 +1,57 @@
+const skillTree: Skill = {
+  id: "backend",
+  name: "Backend Development",
+  description: "Core skills for backend development.",
+  level: 0,
+  maxLevel: 1,
+  prerequisites: [],
+  subSkills: [
+    {
+      id: "nodejs",
+      name: "Node.js",
+      description: "JavaScript runtime built on Chrome's V8 JavaScript engine.",
+      level: 0,
+      maxLevel: 5,
+      prerequisites: [],
+      subSkills: [
+        {
+          id: "express",
+          name: "Express.js",
+          description: "Fast, unopinionated, minimalist web framework for Node.js.",
+          level: 0,
+          maxLevel: 3,
+          prerequisites: ["nodejs"],
+          subSkills: [],
+        },
+      ],
+    },
+    {
+      id: "database",
+      name: "Database Management",
+      description: "Skills for managing relational and non-relational databases.",
+      level: 0,
+      maxLevel: 5,
+      prerequisites: [],
+      subSkills: [
+        {
+          id: "mongodb",
+          name: "MongoDB",
+          description: "NoSQL database for modern applications.",
+          level: 0,
+          maxLevel: 3,
+          prerequisites: ["database"],
+          subSkills: [],
+        },
+        {
+          id: "postgresql",
+          name: "PostgreSQL",
+          description: "Advanced open source relational database.",
+          level: 0,
+          maxLevel: 3,
+          prerequisites: ["database"],
+          subSkills: [],
+        },
+      ],
+    },
+  ],
+};

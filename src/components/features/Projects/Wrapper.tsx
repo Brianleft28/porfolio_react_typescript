@@ -14,14 +14,14 @@ const Wrapper: React.FC<WrapperProps> = ({ children, lang }) => {
 
   return (
     <Card
-      shadow="lg"
+      shadow="sm"
       className="mb-4 bg-transparent p-3"
       isBlurred={true}
       fullWidth={true}
       radius="none"
     >
       <CardHeader className="flex flex-col md:flex-row justify-center items-center gap-2 sm:gap-4">
-        <p className="text-primary shadow-md-secondary text-center md:text-start text-3xl md:text-4xl lg:text-5xl font-bold tracking-wide leading-tight">
+        <p className="text-primary text-center md:text-start text-3xl md:text-4xl lg:text-5xl font-bold tracking-wide leading-tight">
           {texts[lang].title.main}
         </p>
         <div>
@@ -39,7 +39,7 @@ const Wrapper: React.FC<WrapperProps> = ({ children, lang }) => {
       variant="underlined"
       size="sm"
       onChange={(e) => setCategory(e.target.value as Category)}
-      className="w-full md:w-1/3"
+      className="md:ml-40 md:max-w-[180px] md:w-1/3 text-secondary border-b border-primary text-bold"
     >
       {texts[lang].options.map((option) => (
         <SelectItem key={option.key}>

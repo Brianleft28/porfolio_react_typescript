@@ -16,9 +16,6 @@ const Skills = () => {
       className="mb-4 bg-transparent p-3"
     >
       <SkillHeader lang={lang} />
-      <div>
-        <p>test paragrafh</p>
-      </div>
       <Divider />
       <SkillBody lang={lang} />
     </Card>

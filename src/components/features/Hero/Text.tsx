@@ -4,21 +4,8 @@ export const texts = {
     name: " Brian Benegas",
     description: (
       <>
-        Passionate about clean, efficient code, always seeking new ways to learn
-        and improve. I work with technologies like{" "}
-        <span className="text-secondary-400">
-          TypeScript, SQL, Svelte, React, and Node.{" "}
-        </span>
-        My approach is centered on excellence: every line of code is an
-        opportunity to refine my skills and add value to the projects I
-        contribute to. I specialize in creating{" "}
-        <span className="text-secondary-400">scalable</span> and{" "}
-        <span className="text-secondary-400">high-performance</span>{" "}
-        applications that deliver{" "}
-        <span className="text-secondary-400">exceptional user experiences</span>
-        . I'm committed to constant innovation, exploring new technologies, and
-        pushing the boundaries of what's possible in every project.
-      </>
+      I am a backend developer passionate about creating efficient and scalable solutions. With experience in <span className="text-secondary">Node.js</span>, <span className="text-secondary">TypeScript</span>, <span className="text-secondary">Express</span>, and both relational and non-relational databases, I specialize in <span className="text-secondary">API</span> integration, performance optimization, and implementing robust architectures using design patterns and <span className="text-secondary">ORM</span>. Although I also have knowledge in frontend, my true passion lies in the backend, where I enjoy solving complex problems and improving technological infrastructure. I am seeking opportunities that allow me to apply my skills in challenging projects and collaborate with dynamic teams to drive innovation and growth.
+    </>
     ),
     buttons: {
       contact: "Contact Me",
@@ -39,23 +26,7 @@ export const texts = {
     name: " Brian Benegas",
     description: (
       <>
-        Apasionado por el código limpio y eficiente, siempre buscando nuevas
-        formas de aprender y mejorar. Trabajo con tecnologías como{" "}
-        <span className="text-secondary-400">
-          TypeScript, SQL, Svelte, React y Node.{" "}
-        </span>
-        Mi enfoque se basa en la excelencia: cada línea de código es una
-        oportunidad para perfeccionar mis habilidades y aportar valor a los
-        proyectos en los que participo. Me especializo en crear aplicaciones{" "}
-        <span className="text-secondary-400">escalables</span> y{" "}
-        <span className="text-secondary-400">de alto rendimiento</span> que
-        ofrezcan{" "}
-        <span className="text-secondary-400">
-          experiencias de usuario excepcionales
-        </span>
-        . Estoy comprometido con la innovación constante, explorando nuevas
-        tecnologías y empujando los límites de lo que es posible en cada
-        proyecto.
+       Soy un desarrollador backend apasionado por crear soluciones eficientes y escalables. Con experiencia en <span className="text-secondary">Node.js</span>, <span className="text-secondary">TypeScript</span>, <span className="text-secondary">Express</span>, y bases de datos tanto relacionales como no relacionales, me especializo en la integración de <span className="text-secondary">APIs</span>, optimización de rendimiento y la implementación de arquitecturas robustas utilizando patrones de diseño y <span className="text-secondary">ORM</span>. Aunque también tengo conocimientos en frontend, mi verdadera pasión reside en el backend, donde disfruto resolviendo problemas complejos y mejorando la infraestructura tecnológica. Estoy en busca de oportunidades que me permitan aplicar mis habilidades en proyectos desafiantes y colaborar con equipos dinámicos para impulsar la innovación y el crecimiento.
       </>
     ),
     buttons: {

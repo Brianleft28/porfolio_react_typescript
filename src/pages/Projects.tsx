@@ -19,12 +19,11 @@ const Projects = () => {
 
   return (
     <Wrapper lang={lang}>
-      <div className="grid p-5 sm:grid-cols-2 grid-cols-1 md:grid-cols-3 gap-2">
-
+      <div className="grid p-5 shadow-none sm:grid-cols-2 grid-cols-1 md:grid-cols-3 gap-2">
         {filteredProjects.map((project: Project, i: number) => (
           <div
             key={project[lang].key + i}
-            className="mx-3 rounded-sm shadow-sm  bg-gradient-to-b from-content1 max-w-[275px] p-4 hover:cursor-pointer hover:-translate-y-0.5 hover:shadow-md rounded-e-md transition-all duration-250 hover:border-b-secondary border-b-primary border-b-2 border border-divider"
+            className="mx-3 rounded-sm  bg-gradient-to-b from-content1 max-w-[275px] p-4 hover:cursor-pointer hover:-translate-y-0.5 hover:shadow-sm rounded-e-md transition-all duration-250 hover:border-b-secondary border-b-primary border-b-2 border border-divider"
           >
             <CardProject
               img={project[lang].img[0]}
