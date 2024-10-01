@@ -1,4 +1,4 @@
 *::selection {
-    background-color: hsl(var(--nextui-secondary));
+    background-color: hsl(var(--nextui-secondary-DEFAULT));
     color: hsl(var(--nextui-foreground))
 }

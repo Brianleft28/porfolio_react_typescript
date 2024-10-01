@@ -15,17 +15,17 @@ export default {
       },
       colors: {
         primary: {
-          DEFAULT: "#9320E6", // Violeta profundo (base)
-          50: "#F5E8FF", // Violeta muy claro
-          100: "#E0BBFF", // Violeta suave
-          200: "#CC8EFF", // Violeta intermedio
-          300: "#B862FF", // Violeta más fuerte
-          400: "#A536FF", // Violeta vibrante
-          500: "#9320E6", // Violeta profundo
-          600: "#811ACC", // Violeta oscuro
-          700: "#6F15B3", // Violeta muy oscuro
-          800: "#5D1099", // Violeta oscuro
-          900: "#4B0B80", // Violeta muy profundo
+          DEFAULT: "#008080", // Teal (base)
+          50: "#E0F7F7", // Teal muy claro
+          100: "#B3EDED", // Teal suave
+          200: "#80E3E3", // Teal intermedio
+          300: "#4DD9D9", // Teal más brillante
+          400: "#26CFCF", // Teal vibrante
+          500: "#00C5C5", // Teal fuerte
+          600: "#00B3B3", // Teal profundo
+          700: "#009999", // Teal oscuro
+          800: "#007F7F", // Teal muy oscuro
+          900: "#006666", // Teal eléctrico más oscuro
         },
         secondary: {
           DEFAULT: "#4DA94D", // Verde más brillante (base)

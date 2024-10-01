@@ -17,7 +17,16 @@ export interface Project {
   en: ProjectDetails;
 }
 
-export interface SkillsDetails {
-  title: string;
-  skills: string[];
+interface SkillDetails {
+  id: number;
+  name: string;
+  description: string;
+  img: string;
+  subSkills: SubSkill[];
+}
+type SubSkill = SkillDetails;
+
+export interface Skill {
+  es: SkillDetails;
+  en: SkillDetails;
 }
